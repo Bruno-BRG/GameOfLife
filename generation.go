@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"os/exec"
+	"time"
 )
 
 func nextGeneration(grid [][]int, M int, N int) {
@@ -56,5 +58,7 @@ func nextGeneration(grid [][]int, M int, N int) {
 		}
 		fmt.Println()
 	}
+	time.Sleep(1 * time.Second)
+	exec.Command("powershell", "clear").Output()
 	nextGeneration(future, M, N)
 }

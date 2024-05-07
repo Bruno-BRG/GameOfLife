@@ -34,5 +34,5 @@ func main() {
 		fmt.Println()
 	}
 	fmt.Println()
-	displayGraphics(grid, M, N)
+	nextGeneration(grid, M, N)
 }
