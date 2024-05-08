@@ -2,24 +2,35 @@ package main
 
 import (
 	"fmt"
-	"os/exec"
+	"math/rand/v2"
+	//"os/exec"
 )
 
 func main() {
-	generations := 0
+	//generations := 0
 	M, N := 10, 10
+	var randomNumber int
 	// Initializing the grid.
 	grid := [][]int{
 		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-		{0, 0, 0, 1, 1, 0, 0, 0, 0, 0},
-		{0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
 		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-		{0, 0, 0, 1, 1, 0, 0, 0, 0, 0},
-		{0, 0, 1, 1, 0, 0, 0, 0, 0, 0},
-		{0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
-		{0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
 		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+	}
+
+	for i := 0; i < 10; i++ {
+		for j := 0; j < 10; j++ {
+			randomNumber = (rand.IntN(100))
+			if grid[i][j] == 0 && randomNumber < 25 {
+				grid[i][j] = 1
+			}
+		}
 	}
 
 	//i want the code to run in a dedicated terminal//
@@ -35,6 +46,6 @@ func main() {
 		}
 		fmt.Println()
 	}
-	exec.Command("powershell", "clear").Output()
-	nextGeneration(grid, M, N, generations)
+	//exec.Command("powershell", "clear").Output()
+	//nextGeneration(grid, M, N, generations)
 }
