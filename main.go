@@ -2,9 +2,11 @@ package main
 
 import (
 	"fmt"
+	"os/exec"
 )
 
 func main() {
+	generations := 0
 	M, N := 10, 10
 	// Initializing the grid.
 	grid := [][]int{
@@ -33,6 +35,6 @@ func main() {
 		}
 		fmt.Println()
 	}
-	fmt.Println()
-	nextGeneration(grid, M, N)
+	exec.Command("powershell", "clear").Output()
+	nextGeneration(grid, M, N, generations)
 }
