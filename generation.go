@@ -61,7 +61,7 @@ func nextGeneration(grid [][]int, M int, N int, generations int) {
 		}
 		fmt.Println()
 	}
-	time.Sleep(10 * time.Millisecond)
+	time.Sleep(5000 * time.Millisecond)
 	exec.Command("powershell", "clear").Output()
 	nextGeneration(future, M, N, Generations)
 }

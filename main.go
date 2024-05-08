@@ -3,13 +3,14 @@ package main
 import (
 	"fmt"
 	"math/rand/v2"
-	//"os/exec"
+	"os/exec"
+	"time"
 )
 
 func main() {
-	//generations := 0
 	M, N := 10, 10
-	var randomNumber int
+	generations, randomNumber := 0, 0
+
 	// Initializing the grid.
 	grid := make([][]int, M)
 	for i := range grid {
@@ -31,6 +32,7 @@ func main() {
 		}
 		fmt.Println()
 	}
-	//exec.Command("powershell", "clear").Output()
-	//nextGeneration(grid, M, N, generations)
+	time.Sleep(7500 * time.Millisecond)
+	exec.Command("powershell", "clear").Output()
+	nextGeneration(grid, M, N, generations)
 }
