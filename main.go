@@ -15,25 +15,18 @@ func main() {
 	for i := range grid {
 		grid[i] = make([]int, N)
 	}
-
-	for i := 0; i < 10; i++ {
-		for j := 0; j < 10; j++ {
-			randomNumber = (rand.IntN(100))
-			if grid[i][j] == 0 && randomNumber < 25 {
-				grid[i][j] = 1
-			}
-		}
-	}
-
 	//i want the code to run in a dedicated terminal//
 
 	fmt.Println("Original Generation")
 	for i := 0; i < M; i++ {
 		for j := 0; j < N; j++ {
-			if grid[i][j] == 0 {
-				fmt.Print(".")
-			} else {
+			randomNumber = (rand.IntN(100))
+			if grid[i][j] == 0 && randomNumber < 25 {
+				grid[i][j] = 1
 				fmt.Print("*")
+			} else if grid[i][j] == 0 {
+				grid[i][j] = 0
+				fmt.Print(".")
 			}
 		}
 		fmt.Println()
