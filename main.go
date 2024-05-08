@@ -2,37 +2,37 @@ package main
 
 import (
 	"fmt"
+	"math/rand/v2"
+	"os/exec"
+	"time"
 )
 
 func main() {
 	M, N := 10, 10
-	// Initializing the grid.
-	grid := [][]int{
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-		{0, 0, 0, 1, 1, 0, 0, 0, 0, 0},
-		{0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-		{0, 0, 0, 1, 1, 0, 0, 0, 0, 0},
-		{0, 0, 1, 1, 0, 0, 0, 0, 0, 0},
-		{0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
-		{0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-	}
+	generations, randomNumber := 0, 0
 
+	// Initializing the grid.
+	grid := make([][]int, M)
+	for i := range grid {
+		grid[i] = make([]int, N)
+	}
 	//i want the code to run in a dedicated terminal//
 
 	fmt.Println("Original Generation")
 	for i := 0; i < M; i++ {
 		for j := 0; j < N; j++ {
-			if grid[i][j] == 0 {
-				fmt.Print(".")
-			} else {
+			randomNumber = (rand.IntN(100))
+			if grid[i][j] == 0 && randomNumber < 25 {
+				grid[i][j] = 1
 				fmt.Print("*")
+			} else if grid[i][j] == 0 {
+				grid[i][j] = 0
+				fmt.Print(".")
 			}
 		}
 		fmt.Println()
 	}
-	fmt.Println()
-	nextGeneration(grid, M, N)
+	time.Sleep(7500 * time.Millisecond)
+	exec.Command("powershell", "clear").Output()
+	nextGeneration(grid, M, N, generations)
 }
