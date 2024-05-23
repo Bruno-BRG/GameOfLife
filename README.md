@@ -5,6 +5,7 @@ The project is based on Conways game of life, it uses go as its main language. T
 ## Starting
 
 To begin just download or clone the files from the reepositorire and run go run . on you terminal and see the magic happen;
-### Requisits
+
+### Prerequisites
 
 You need to have the Go language installed on you computer for the code to run and compile.
