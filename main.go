@@ -7,6 +7,7 @@ import (
 	"time"
 )
 
+// Function to generate the next generation
 func main() {
 	M, N := 10, 10
 	generations, randomNumber := 0, 0
@@ -16,8 +17,8 @@ func main() {
 	for i := range grid {
 		grid[i] = make([]int, N)
 	}
-	//i want the code to run in a dedicated terminal//
 
+	// Function to generate the next generation
 	fmt.Println("Original Generation")
 	for i := 0; i < M; i++ {
 		for j := 0; j < N; j++ {

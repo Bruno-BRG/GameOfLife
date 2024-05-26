@@ -6,6 +6,7 @@ import (
 	"time"
 )
 
+// Function to generate the next generation
 func nextGeneration(grid [][]int, M int, N int, generations int) {
 	// Display the grid
 
@@ -50,6 +51,7 @@ func nextGeneration(grid [][]int, M int, N int, generations int) {
 		}
 	}
 
+	// Display the grid
 	fmt.Println("-----------------------")
 	for i := 0; i < M; i++ {
 		for j := 0; j < N; j++ {
@@ -63,5 +65,6 @@ func nextGeneration(grid [][]int, M int, N int, generations int) {
 	}
 	time.Sleep(5000 * time.Millisecond)
 	exec.Command("powershell", "clear").Output()
+	// Recursion
 	nextGeneration(future, M, N, Generations)
 }
