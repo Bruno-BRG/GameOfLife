@@ -8,4 +8,4 @@ To begin just download or clone the files from the reepositorire and run go run 
 
 ### Prerequisites
 
-You need to have the Go language installed on you computer for the code to run and compile.
+You need to have the Go language installed on you computer for the code to run and then compile
